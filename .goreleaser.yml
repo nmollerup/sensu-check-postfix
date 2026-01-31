@@ -1,0 +1,67 @@
+version: 2
+project_name: sensu-check-postfix
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - main: ./cmd/check-mailq/main.go
+    id: check-mailq
+    binary: bin/check-mailq
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_386
+      - linux_amd64
+      - linux_arm_7
+      - linux_arm64
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+
+  - main: ./cmd/metrics-mailq/main.go
+    id: metrics-mailq
+    binary: bin/metrics-mailq
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_386
+      - linux_amd64
+      - linux_arm_7
+      - linux_arm64
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+
+  - main: ./cmd/check-mail-delay/main.go
+    id: check-mail-delay
+    binary: bin/check-mail-delay
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_386
+      - linux_amd64
+      - linux_arm_7
+      - linux_arm64
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+
+archives:
+  - id: tar
+    formats: tar.gz
+    files:
+      - LICENSE
+      - README.md
+      - CHANGELOG.md
+
+checksum:
+  name_template: "{{ .ProjectName }}_{{ .Version }}_sha512-checksums.txt"
+  algorithm: sha512
