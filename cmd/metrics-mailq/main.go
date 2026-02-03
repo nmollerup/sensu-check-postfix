@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sensu/sensu-plugin-sdk/sensu"
 	"github.com/sensu/sensu-go/types"
+	"github.com/sensu/sensu-plugin-sdk/sensu"
 )
 
 // Config represents the metric plugin config.
