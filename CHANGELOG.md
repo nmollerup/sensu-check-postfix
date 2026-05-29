@@ -31,7 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Environment variable support for all configuration options
 - Comprehensive README with usage examples
 
-
 [Unreleased]: https://github.com/nmollerup/sensu-check-postfix/compare/0.1.1...HEAD
 [0.1.1]: https://github.com/nmollerup/sensu-check-postfix/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/nmollerup/sensu-check-postfix/releases/tag/0.1.0
