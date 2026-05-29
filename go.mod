@@ -1,6 +1,6 @@
 module github.com/nmollerup/sensu-check-postfix
 
-go 1.24.12
+go 1.26.3
 
 require (
 	github.com/sensu/sensu-go/types v0.13.0
