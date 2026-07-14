@@ -18,9 +18,9 @@ builds:
       - linux_arm64
     ldflags:
       - -s -w
-      - -X main.version={{.Version}}
-      - -X main.commit={{.Commit}}
-      - -X main.date={{.Date}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.version={{.Version}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.commit={{.Commit}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.date={{.Date}}
 
   - main: ./cmd/metrics-mailq/main.go
     id: metrics-mailq
@@ -34,9 +34,9 @@ builds:
       - linux_arm64
     ldflags:
       - -s -w
-      - -X main.version={{.Version}}
-      - -X main.commit={{.Commit}}
-      - -X main.date={{.Date}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.version={{.Version}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.commit={{.Commit}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.date={{.Date}}
 
   - main: ./cmd/check-mail-delay/main.go
     id: check-mail-delay
@@ -50,9 +50,9 @@ builds:
       - linux_arm64
     ldflags:
       - -s -w
-      - -X main.version={{.Version}}
-      - -X main.commit={{.Commit}}
-      - -X main.date={{.Date}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.version={{.Version}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.commit={{.Commit}}
+      - -X github.com/sensu/sensu-plugin-sdk/version.date={{.Date}}
 
 archives:
   - id: tar
